@@ -1,0 +1,83 @@
+var path = require('path'); // Webp Config needs this line to make sure the filepath is absolute. It is needed mostly for webpack-dev-server usage. (https://github.com/webpack-contrib/awesome-webpack#table-of-contents)
+var webpack = require('webpack'); // Needed for Plugins that use Webpack
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var CleanWebpackPlugin = require('clean-webpack-plugin');
+
+
+module.exports = {
+  entry: './src/assets/js/app.js', // My main JS file with all my requires/imports. (Resets a default. Needed for this file.)
+  output: {
+    path: path.resolve(__dirname, 'app'), // My output file path. (Resets a default. Needed for this file.) Could also just be path: __dirname+'/app/js' if not using webpack-dev-server. ** Make this the dist/app folder so that all your compiled stuff goes here. This way you can let index.html be index.html and style.css be assets/css/style.css.
+    filename: 'assets/js/app.min.js' // What the name of my output file is. (Resets a default. Needed for this file.)
+    //publicPath: '/app/' // This is used if Webpack-dev-server fails but its failing to live reload anyway.
+  },
+
+  module: { // Adding Loaders.
+  	rules: [
+  		{ // CSS Compiler (uses sass and css-loader)
+  			test: /\.scss$/,
+  			use: ExtractTextPlugin.extract({
+  				use : ['css-loader', 'sass-loader']
+  			})
+  		},
+        { // HTML Compiler (html-loader)
+            test: /\.html$/,
+            use : ['html-loader']
+        },
+        { // CSS Compiler (uses sass and css-loader)
+            test: /\.(jpg|png)$/,
+            use : [
+                {
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: 'assets/img/' // Image Destination for App/Dist Dir.
+                    }
+                }
+            ]
+        }
+        /*
+        { // JS Compiler
+            test: /\.js$/,
+            use: [
+                {
+                    loader: 'babel-loader', //Currently off. Must npm install babel-core, babel-loader and babel-preset-es2015.
+                    options: {
+                        presets: ['es2015']
+                    }
+                }
+            ]
+        },
+        */
+        /*
+        // This chunk of code compiles CSS to the head section of the HTML Page.
+        { // CSS Compiler (uses style and css loader)
+            test: /\.css$/,
+            use: [ // used instead of "loader:" if you use multiple loaders.
+                'style-loader', // Order is important. (Last is first [think CSS]).
+                'css-loader'
+            ]
+        }
+        */
+  	]
+  },
+
+  plugins: [ // Adding Plugins + needs require(webpack); avobe if wepack is needed.
+  	
+    new webpack.optimize.UglifyJsPlugin({
+  		// ..
+  	}),
+
+  	new ExtractTextPlugin("assets/css/styles.css"), // Name and Destination (It outputs it as ..css name for some reason?)
+
+    new HtmlWebpackPlugin({
+        template: 'src/index.html', // Where to look for the Source Index.html
+        filename: 'index.html' // Where to place the new index.html file for the App/Dist dir.
+    }),
+
+    new CleanWebpackPlugin(['dist']), // Removes Dist/App folder before compiling happens.
+
+  ]
+
+};

@@ -1,0 +1,26 @@
+{
+  "name": "webpack-app",
+  "version": "1.0.0",
+  "description": "Webpack Launchpad is a small, easy-to-use and well-documented Webpack boilerplate for Webpack beginners.",
+  "main": "app.js",
+  "scripts": {
+    "build": "webpack", // Builds our Webpack App (unminimized/development version: you may add --watch)
+    "build:production": "webpack -p", // Builds Production-Ready version of the build
+    "spinServ": "webpack-dev-server", // Spins Auto Reloading Server
+  },
+  "author": "Rodrigo Leon",
+  "license": "MIT",
+  "devDependencies": {
+    "clean-webpack-plugin": "^0.1.16",
+    "css-loader": "^0.28.4",
+    "extract-text-webpack-plugin": "^2.1.2",
+    "file-loader": "^0.11.2",
+    "html-loader": "^0.4.5",
+    "html-webpack-plugin": "^2.28.0",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.0.0",
+    "webpack-dev-server": "^2.5.0"
+  }
+}
