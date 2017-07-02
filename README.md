@@ -23,18 +23,22 @@ If you intend to commit anything, here are a few helpful points:
 ## Repo
 
 * Add all to-do items to Github.
+* Start docs explaining code.
+* Start docs explaining how to run code.
+* Typos and stuff that happens :P
 
 ### Missing (From Respawn Gulp):
 * [Image Compression](https://github.com/Klathmon/imagemin-webpack-plugin)
 * [SVG Sprite](https://github.com/TodayTix/svg-sprite-webpack-plugin)
 * [SourceMaps](https://github.com/webpack-contrib/source-map-loader)
-* [Purify]()(Removes unused CSS -- maybe Webpack does this by itself?)
+* [Purify]()(Removes unused CSS -- maybe Webpack does this by itself? With Uglyfy?)
 * [Babel]()
 * [AutoPrefixer]()
 * [PostCSS May eliminate the need for purify and Autoprefixer](https://github.com/postcss/postcss-loader)
 
 ### Add to Webpack
 
+* Configure uglifyJS to not ugligly on dev mode. only on production
 * Add webpackvalidator (bring on the pretty notifications/warning messages as well)
 * Production/Dev environment conditions](https://www.youtube.com/watch?v=eWmkBNBTbMM) (00:34)
 * Module Reload (00:34)
