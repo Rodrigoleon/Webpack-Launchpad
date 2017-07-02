@@ -43,7 +43,7 @@ module.exports = {
     plugins: [ // Adding Plugins + needs require(webpack); avobe if wepack is needed.
 
         new webpack.optimize.UglifyJsPlugin({
-        // ..
+        // Change settings here so that non dev one is debuggable
         }),
 
         new ExtractTextPlugin("assets/css/styles.css"), // Name and Destination (It outputs it as ..css name for some reason?)

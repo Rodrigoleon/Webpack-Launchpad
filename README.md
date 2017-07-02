@@ -20,6 +20,10 @@ If you intend to commit anything, here are a few helpful points:
 
 ## TO DO
 
+## Repo
+
+* Add all to-do items to Github.
+
 ### Missing (From Respawn Gulp):
 * [Image Compression](https://github.com/Klathmon/imagemin-webpack-plugin)
 * [SVG Sprite](https://github.com/TodayTix/svg-sprite-webpack-plugin)
@@ -31,13 +35,14 @@ If you intend to commit anything, here are a few helpful points:
 
 ### Add to Webpack
 
+* Add webpackvalidator (bring on the pretty notifications/warning messages as well)
 * Production/Dev environment conditions](https://www.youtube.com/watch?v=eWmkBNBTbMM) (00:34)
 * Module Reload (00:34)
 * Source Maps
 * [Tree shaking + UglifyJS to eliminate dead code](https://www.youtube.com/watch?v=eWmkBNBTbMM) (54:00 )
 * 49:00 Adding an image with url-loader (base 64)
 * hash names at the end of modules and css so that they do not cache on production
-
+* Make sure we are not shipping anything to customers that we do not want.
 
 ## Sources
 
