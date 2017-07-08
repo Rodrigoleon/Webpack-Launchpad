@@ -4,9 +4,9 @@
   "description": "Webpack Launchpad is a small, easy-to-use and well-documented Webpack boilerplate for Webpack beginners.",
   "main": "app.js",
   "scripts": {
-    "build": "webpack",
-    "build:production": "webpack -p",
-    "spinServ": "webpack-dev-server"
+    "build": "webpack -p --env.prod",
+    "dev": "webpack --env.dev",
+    "server": "webpack-dev-server"
   },
   "author": "Rodrigo Leon",
   "license": "MIT",
