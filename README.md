@@ -39,7 +39,7 @@ If you intend to commit anything, here are a few helpful points:
 ### Add to Webpack
 
 * Configure uglifyJS to not ugligly on dev mode. only on production
-* Add webpackvalidator (bring on the pretty notifications/warning messages as well)
+* Add webpackvalidator (brings pretty console error messages -- Allegedly webpack val is already on webpack 2 so it is not needed but we do not know how to activate.) [Webpack Validator Lynda](https://www.lynda.com/JavaScript-tutorials/Webpack-validator/604264/622882-4.html?autoplay=true)
 * Production/Dev environment conditions](https://www.youtube.com/watch?v=eWmkBNBTbMM) (00:34)
 * Module Reload (00:34)
 * Source Maps
