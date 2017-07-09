@@ -28,6 +28,7 @@ If you intend to commit anything, here are a few helpful points:
 * Typos and stuff that happens :P
 
 ### Missing (From Respawn Gulp):
+
 * [Image Compression](https://github.com/Klathmon/imagemin-webpack-plugin)
 * [SVG Sprite](https://github.com/TodayTix/svg-sprite-webpack-plugin)
 * [Purify]()(Removes unused CSS -- maybe Webpack does this by itself? With Uglyfy?)
@@ -37,7 +38,6 @@ If you intend to commit anything, here are a few helpful points:
 
 ### Add to Webpack
 
-* Configure uglifyJS to not ugligly on dev mode. only on production
 * Add webpackvalidator (brings pretty console error messages -- Allegedly webpack val is already on webpack 2 so it is not needed but we do not know how to activate.) [Webpack Validator Lynda](https://www.lynda.com/JavaScript-tutorials/Webpack-validator/604264/622882-4.html?autoplay=true)
 * [Tree shaking + UglifyJS to eliminate dead code](https://www.youtube.com/watch?v=eWmkBNBTbMM) (54:00 )
 * 49:00 Adding an image with url-loader (base 64)
