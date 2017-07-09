@@ -72,6 +72,9 @@ module.exports = env => { // You may use an Object ( take out: "() => { return" 
                 }
             ]
         }, // Modules End
+        externals: {
+            'jquery' : 'jQuery' // jQuery (if included [which at the moment we are not]) is imported externally, not from this bundle file. You will need to add Loadash, React, Angular, etc to this if you want to do the same with those. -- To import jQuery into your app.js (or other modules), use "import $ from 'jquery';" and make sure to add your CDN dependency to your HTML file. (Please add this to the docs!) (https://webpack.js.org/guides/author-libraries/)
+        },
         devServer: {
             hot: env.prod ? false : true, // Tell the dev-server we're using HMR
         }
