@@ -29,14 +29,14 @@ module.exports = env => { // You may use an Object ( take out: "() => { return" 
     );
 
     return {
+        devtool: env.prod ? 'source-map' : 'eval',
+        plugins: plugins, // Please note that there are alternative options. (Sec 8.)
         entry: './src/assets/js/app.js', // My main JS file with all my requires/imports. (Resets a default. Needed for this file.)
         output: {
             path: path.resolve(__dirname, 'app'), // My output file path. (Resets a default. Needed for this file.) Could also just be path: __dirname+'/app/js' if not using webpack-dev-server. ** Make this the dist/app folder so that all your compiled stuff goes here. This way you can let index.html be index.html and style.css be assets/css/style.css.
             filename: 'assets/js/app.min.js' // What the name of my output file is. (Resets a default. Needed for this file.)
             //publicPath: '/app/' // This is used if Webpack-dev-server fails but its failing to live reload anyway.
         },
-        devtool: env.prod ? 'source-map' : 'eval',
-
         module: { // Adding Loaders.
             rules: [
                 { // CSS Compiler (uses sass and css-loader)
@@ -63,8 +63,6 @@ module.exports = env => { // You may use an Object ( take out: "() => { return" 
                 }
             ]
         }, // Modules End
-
-        plugins: plugins,
         devServer: {
             hot: env.prod ? false : true, // Tell the dev-server we're using HMR
         }
