@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack -p --env.prod",
     "dev": "webpack --env.dev",
-    "server": "webpack-dev-server"
+    "server": "webpack-dev-server --env.dev"
   },
   "author": "Rodrigo Leon",
   "license": "MIT",
