@@ -1,3 +1,8 @@
 body{
 	background-color: teal;
 }
+
+/* Testing PostCSS and Autoprefixer */
+:fullscreen a {
+    display: flex;
+}

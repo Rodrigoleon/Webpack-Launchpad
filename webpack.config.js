@@ -38,10 +38,10 @@ module.exports = env => { // You may use an Object ( take out: "() => { return" 
         },
         module: { // Adding Loaders.
             rules: [
-                { // CSS Compiler (uses sass and css-loader)
+                { // CSS Compiler (uses SASS-Loader and CSS-Loader and PostCSS-Loader)
                     test: /\.scss$/,
                     use: ExtractTextPlugin.extract({
-                        use : ['css-loader', 'sass-loader']
+                        use : ['css-loader', 'postcss-loader', 'sass-loader']
                     })
                 },
                 { // HTML Compiler (html-loader)
