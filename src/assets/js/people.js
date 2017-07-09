@@ -1,5 +1,3 @@
-//var $ = require('jquery');
-
 var people = [ // let = var in ES6 (Note that if using Let webpack production may not work.)
 	{name: 'John Doe'},
 	{name: 'Steave Smith'},
