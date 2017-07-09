@@ -60,6 +60,16 @@ module.exports = env => { // You may use an Object ( take out: "() => { return" 
                             }
                         }
                     ]
+                },
+                { // The Babel Loader
+                    test: /\.js$/,
+                    exclude: /node_modules/,
+                    use: {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['es2015'] // You may use env as stated in the docs.
+                        }
+                    }
                 }
             ]
         }, // Modules End
