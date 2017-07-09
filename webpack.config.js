@@ -4,8 +4,30 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 
-
 module.exports = env => { // You may use an Object ( take out: "() => { return" ) or an ES6/ES2015 function so that we can pass the env parameter.
+    
+    // Create Plugins variable to hold production vs development.
+    var plugins = env.prod
+        ?   [ // When in Production
+                //new webpack.optimize.UglifyJsPlugin({
+                    //Change settings here so that non dev one is debuggable
+                //}),
+            ]
+        :   [ // When in Development
+                new webpack.HotModuleReplacementPlugin() // Activating HMR
+            ];
+            
+    // Pushing Plugins that are used regardless dev vs prod.
+    plugins.push(
+        new ExtractTextPlugin("assets/css/styles.css"), // Name and Destination (It outputs it as ..css name for some reason?)
+        new HtmlWebpackPlugin({
+            template: 'src/index.html', // Where to look for the Source Index.html
+            filename: 'index.html' // Where to place the new index.html file for the App/Dist dir.
+        }),
+        new CleanWebpackPlugin(['dist']) // Removes Dist/App folder before compiling happens.
+
+    );
+
     return {
         entry: './src/assets/js/app.js', // My main JS file with all my requires/imports. (Resets a default. Needed for this file.)
         output: {
@@ -42,22 +64,10 @@ module.exports = env => { // You may use an Object ( take out: "() => { return" 
             ]
         }, // Modules End
 
-        plugins: [ // Adding Plugins + needs require(webpack); avobe if wepack is needed.
-
-            //new webpack.optimize.UglifyJsPlugin({
-            // Change settings here so that non dev one is debuggable
-            //}),
-
-            new ExtractTextPlugin("assets/css/styles.css"), // Name and Destination (It outputs it as ..css name for some reason?)
-
-            new HtmlWebpackPlugin({
-                template: 'src/index.html', // Where to look for the Source Index.html
-                filename: 'index.html' // Where to place the new index.html file for the App/Dist dir.
-            }),
-
-            new CleanWebpackPlugin(['dist']), // Removes Dist/App folder before compiling happens.
-
-        ]
+        plugins: plugins,
+        devServer: {
+            hot: env.prod ? false : true, // Tell the dev-server we're using HMR
+        }
 
     };
 }
