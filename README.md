@@ -31,18 +31,14 @@ If you intend to commit anything, here are a few helpful points:
 
 * [Image Compression](https://github.com/Klathmon/imagemin-webpack-plugin)
 * [SVG Sprite](https://github.com/TodayTix/svg-sprite-webpack-plugin)
-* [Purify]()(Removes unused CSS -- maybe Webpack does this by itself? With Uglyfy?)
-* [Babel]()
-* [AutoPrefixer]()
-* [PostCSS May eliminate the need for purify and Autoprefixer](https://github.com/postcss/postcss-loader)
+* [Purify]()(Removes unused CSS)
 
 ### Add to Webpack
 
-* Add webpackvalidator (brings pretty console error messages -- Allegedly webpack val is already on webpack 2 so it is not needed but we do not know how to activate.) [Webpack Validator Lynda](https://www.lynda.com/JavaScript-tutorials/Webpack-validator/604264/622882-4.html?autoplay=true)
-* [Tree shaking + UglifyJS to eliminate dead code](https://www.youtube.com/watch?v=eWmkBNBTbMM) (54:00 )
-* 49:00 Adding an image with url-loader (base 64)
-* hash names at the end of modules and css so that they do not cache on production
 * Make sure we are not shipping anything to customers that we do not want.
+* Add webpackvalidator (brings pretty console error messages -- Allegedly webpack val is already on webpack 2 so it is not needed but we do not know how to activate.) [Webpack Validator Lynda](https://www.lynda.com/JavaScript-tutorials/Webpack-validator/604264/622882-4.html?autoplay=true)
+* 49:00 Adding an image with url-loader (base 64)
+* Add source maps to SCSS.
 
 ## Sources
 
@@ -55,3 +51,7 @@ Webpack Launchpad takes the best parts from these fine folks and their tutorials
 * [Webpack Tutorial](https://www.youtube.com/watch?v=lziuNMk_8eQ)
 * [Webpack Tutorial 2](https://www.youtube.com/watch?v=9kJVYpOqcVU)
 * [Best Webpack Plugins and Loaders](https://github.com/webpack-contrib/awesome-webpack#webpack-plugins)
+
+And follows the conventions of these fine... uh... sites/entities/folks?
+
+* [The SASS Way](http://thesassway.com/beginner/how-to-structure-a-sass-project)
