@@ -14,6 +14,7 @@ const elContent = document.getElementById('content');
 document.getElementById('loadPage1').addEventListener('click', () => {
 	System.import('./sample-page-1')
 		.then(pageModule => {
+			console.log(pageModule.default);
 			elContent.innerHTML = pageModule.default;
 		})
 });
