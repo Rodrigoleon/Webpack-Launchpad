@@ -21,7 +21,7 @@ This project is not "done" yet -- though it may never be done as I may update it
 * Three Shaking
 * Webpack Dev Server
 * Plugins: HMR, Extract Text, HTML Webpack, [Clean Webpack](https://webpack.js.org/guides/output-management/), [PurifyCSS](https://github.com/webpack-contrib/purifycss-webpack)
-* Loaders: SCSS, PostCSS (with Autoprefixer), File, [URL](https://github.com/webpack-contrib/url-loader), CSS, HTML, Style.
+* Loaders: SCSS, PostCSS (with Autoprefixer), File, [URL](https://github.com/webpack-contrib/url-loader), CSS, HTML, Style, [SVG Sprite](https://github.com/kisenka/svg-sprite-loader)
 
 ## Rules
 
@@ -50,7 +50,6 @@ If you want to do a PR or commit some stuff, here are a few helpful points:
 
 * Make sure we are not shipping anything to customers that we do not want.
 * [Image Compression](https://github.com/Klathmon/imagemin-webpack-plugin)
-* [SVG Sprite](https://github.com/TodayTix/svg-sprite-webpack-plugin)
 * Use PurifyCSS to include Bootstrap (make sure it is a external source call?)
 
 ## Sources
@@ -68,3 +67,4 @@ Webpack Launchpad takes the best parts from these fine folks and their tutorials
 And follows the conventions of these fine... uh... sites/entities/folks?
 
 * [The SASS Way](http://thesassway.com/beginner/how-to-structure-a-sass-project)
+* [SVG Sprites](https://www.webdesignerdepot.com/2017/05/how-to-create-and-manage-svg-sprites/)

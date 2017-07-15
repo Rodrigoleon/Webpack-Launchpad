@@ -5,6 +5,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 var glob = require('glob'); // Goes with Purify
 var PurifyCSSPlugin = require('purifycss-webpack');
+var SpriteLoaderPlugin = require('svg-sprite-loader/plugin'); // You must use this with the Sprite Loader if you want it to extract to a new location.
 
 module.exports = env => { // You may use an Object ( take out: "() => { return" ) or an ES6/ES2015 function so that we can pass the env parameter.
     
@@ -30,7 +31,8 @@ module.exports = env => { // You may use an Object ( take out: "() => { return" 
             template: 'src/index.html', // Where to look for the Source Index.html
             filename: 'index.html' // Where to place the new index.html file for the App/Dist dir.
         }),
-        new CleanWebpackPlugin(['app']) // Removes Dist/App folder before compiling happens.
+        new CleanWebpackPlugin(['app']), // Removes Dist/App folder before compiling happens.
+        new SpriteLoaderPlugin() // You must use this with the Sprite Loader if you want it to extract to a new location.
     );
 
     return {
@@ -59,7 +61,7 @@ module.exports = env => { // You may use an Object ( take out: "() => { return" 
                     use : ['html-loader']
                 },
                 { // CSS Compiler (uses sass and css-loader)
-                    test: /\.(png|svg|jpg|gif)$/,
+                    test: /\.(png|jpg|gif)$/, // Note that if you are not using the SVG Sprite Loader, you can add SVG here as well.
                     use : [
                         {
                             loader: 'url-loader', // Optionally, you can use File-Loader (It is already included in LP.)
@@ -92,6 +94,15 @@ module.exports = env => { // You may use an Object ( take out: "() => { return" 
                             presets: ['es2015'] // You may use env as stated in the docs.
                         }
                     }
+                },
+                {
+                    test: /\.svg$/,
+                    use: [
+                        {
+                            loader: 'svg-sprite-loader',
+                            options: { extract: true, spriteFilename: 'assets/media/vectors/svg-sprite-[hash:12].svg' },
+                        }
+                    ]
                 }
             ]
         }, // Modules End
