@@ -3,7 +3,7 @@ var people = [ // let = var in ES6 (Note that if using Let webpack production ma
 	{name: 'Steave Smith'},
 	{name: 'Carol Johnson'}
 ];
-//console.log(people); People is not included in our Bundle JS (production) unless this console.log is active. Three Shaking somewhat.
+console.log(people); //People is not included in our Bundle JS (production) unless this console.log is active. Three Shaking somewhat.
 
 // ES2015 Sample Export (Also checks that Babel Loader is working correctly.)
 const testButton = {
