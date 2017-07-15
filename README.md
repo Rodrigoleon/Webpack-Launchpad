@@ -8,53 +8,51 @@ Almost every line in WPLP will be commented so that you can learn what each line
 ## Status
 This project is not "done" yet -- though maybe it will never be done as time goes on a we update it! Currently, there are a few things missing and we just have the very basic.
 
-## Currently Showcasing
+## Webpack Launchpad Includes:
 
 * Code Splitting
 * Hot Module Reloading
 * Source Maps (JS and CSS)
 * ES2015
-* Cache Busting
+* [Cache Busting](https://webpack.js.org/guides/caching/)
 * Environment Variables
 * External Dependencies
+* [Asset Loading](https://webpack.js.org/guides/asset-management/) (Images, Fonts, JSON [JSON is supported by Default])
 * Three Shaking
 * Webpack Dev Server
-* Plugins: HMR, Extract Text, HTML Webpack, Clean Webpack.
-* Loaders: SCSS, PostCSS (with Autoprefixer), File, CSS, HTML, Style.
+* Plugins: HMR, Extract Text, HTML Webpack, [Clean Webpack](https://webpack.js.org/guides/output-management/), [PurifyCSS](https://github.com/webpack-contrib/purifycss-webpack)
+* Loaders: SCSS, PostCSS (with Autoprefixer), File, [URL](https://github.com/webpack-contrib/url-loader), CSS, HTML, Style.
 
 
 ## Rules
-If you intend to commit anything, here are a few helpful points:
 
-* Please don't use ES6 at this time. There are a few bits on this project that uses ES6 (since Webpack 2 now supports it), but for the most part, keep it newbie friendly.
+If you want to do a PR or commit some stuff, here are a few helpful points:
+
+* Please don't use ES6/ES2015 at this time. There are a few bits on this project that uses ES6 (since Webpack 2 now supports it), but for the most part, keep it newbie friendly.
 * Use 4 space tab :P -- no, lets not add a file to handle that.
 * Keep it light as possible!
 * Document your code! Get really hand-holdy with it.
 * Make sure you are using the best and latest way to do anything!
+* Please test your code!
 * Be nice! :)
 
 ## TO DO
 
-## Repo
+### Repo
 
 * Add all to-do items to Github.
 * Start docs explaining code.
 * Start docs explaining how to run code.
-* Typos and stuff that happens :P
-
-### Missing (From Respawn Gulp):
-
-* [Image Compression](https://github.com/Klathmon/imagemin-webpack-plugin)
-* [SVG Sprite](https://github.com/TodayTix/svg-sprite-webpack-plugin)
-* [Purify](https://github.com/webpack-contrib/purifycss-webpack) || [Alt](https://github.com/komachi/usedcss)
-* [Add source maps to SCSS](https://webpack.js.org/loaders/sass-loader/#source-maps)
+* Link our sources to where we got all our plugins, loaders and such from!
+* Check for typos and stuff that happens :P
+* Test this in an actual project once all the points are done!
 
 ### Add to Launchpad
 
+* [Image Compression](https://github.com/Klathmon/imagemin-webpack-plugin)
+* [SVG Sprite](https://github.com/TodayTix/svg-sprite-webpack-plugin)
 * Make sure we are not shipping anything to customers that we do not want.
-* Add webpackvalidator (brings pretty console error messages -- Allegedly webpack val is already on webpack 2 so it is not needed but we do not know how to activate.) [Webpack Validator Lynda](https://www.lynda.com/JavaScript-tutorials/Webpack-validator/604264/622882-4.html?autoplay=true)
-* [Double check chunk hashes and hashes content hashes](https://webpack.js.org/guides/caching/)
-* [Asset Loading](https://webpack.js.org/guides/asset-management/)
+* Use PurifyCSS to include Bootstrap (make sure it is a external source call?)
 
 ## Sources
 
