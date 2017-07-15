@@ -2,6 +2,7 @@
 require('./module-x.js'); //requires module-x JS entire file.
 require('../css/style.scss'); //must be the source file not the rendered CSS.
 
+// Importing a sample image (with ES2015).
 import img from '../media/images/react-logo.png';
 
 // Testing Defaults
@@ -15,6 +16,7 @@ app.innerHTML = newMessage();
 testButton.attachEl();
 // End of ES2015 Sample Import
 
+// Adding the sample image (with ES5).
 app.innerHTML += '<img src="' + img + '">';
 
 // HMR

@@ -6,7 +6,7 @@ Webpack Launchpad is a small, easy-to-use and well-documented Webpack boilerplat
 Almost every line in WPLP will be commented so that you can learn what each line is doing and what is affecting. You may play around with the code however you like, or use it to start your own project as it is.
 
 ## Status
-This project is not "done" yet -- though maybe it will never be done as time goes on a we update it! Currently, there are a few things missing and we just have the very basic.
+This project is not "done" yet -- though it may never be done as I may update it from time to time as Webpack evolves! Currently, there are a few things missing, but checkout what Launchpad is showcasing below.
 
 ## Webpack Launchpad Includes:
 
@@ -23,16 +23,15 @@ This project is not "done" yet -- though maybe it will never be done as time goe
 * Plugins: HMR, Extract Text, HTML Webpack, [Clean Webpack](https://webpack.js.org/guides/output-management/), [PurifyCSS](https://github.com/webpack-contrib/purifycss-webpack)
 * Loaders: SCSS, PostCSS (with Autoprefixer), File, [URL](https://github.com/webpack-contrib/url-loader), CSS, HTML, Style.
 
-
 ## Rules
 
 If you want to do a PR or commit some stuff, here are a few helpful points:
 
-* Please don't use ES6/ES2015 at this time. There are a few bits on this project that uses ES6 (since Webpack 2 now supports it), but for the most part, keep it newbie friendly.
+* Please don't use ES6/ES2015 at this time unless necessary. There are a few bits on this project that uses ES6/ES2015 (since Webpack 2 now supports it), but for the most part, keep it newbie friendly.
 * Use 4 space tab :P -- no, lets not add a file to handle that.
-* Keep it light as possible!
+* Keep it as light as possible!
 * Document your code! Get really hand-holdy with it.
-* Make sure you are using the best and latest way to do anything!
+* Make sure you are using the best and latest way to do whatever it is you are adding!
 * Please test your code!
 * Be nice! :)
 
@@ -49,9 +48,9 @@ If you want to do a PR or commit some stuff, here are a few helpful points:
 
 ### Add to Launchpad
 
+* Make sure we are not shipping anything to customers that we do not want.
 * [Image Compression](https://github.com/Klathmon/imagemin-webpack-plugin)
 * [SVG Sprite](https://github.com/TodayTix/svg-sprite-webpack-plugin)
-* Make sure we are not shipping anything to customers that we do not want.
 * Use PurifyCSS to include Bootstrap (make sure it is a external source call?)
 
 ## Sources
