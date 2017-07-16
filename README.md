@@ -21,7 +21,7 @@ This project is not "done" yet -- though it may never be done as I may update it
 * Three Shaking
 * Webpack Dev Server
 * Plugins: HMR, Extract Text, HTML Webpack, [Clean Webpack](https://webpack.js.org/guides/output-management/), [PurifyCSS](https://github.com/webpack-contrib/purifycss-webpack)
-* Loaders: SCSS, PostCSS (with Autoprefixer), File, [URL](https://github.com/webpack-contrib/url-loader), CSS, HTML, Style, [SVG Sprite](https://github.com/kisenka/svg-sprite-loader)
+* Loaders: SCSS, PostCSS (with Autoprefixer), File, [URL](https://github.com/webpack-contrib/url-loader), CSS, HTML, Style, [SVG Sprite](https://github.com/kisenka/svg-sprite-loader), [Img](https://github.com/thetalecrafter/img-loader).
 
 ## Rules
 
@@ -49,8 +49,9 @@ If you want to do a PR or commit some stuff, here are a few helpful points:
 ### Add to Launchpad
 
 * Make sure we are not shipping anything to customers that we do not want.
-* [Image Compression](https://github.com/Klathmon/imagemin-webpack-plugin)
-* Use PurifyCSS to include Bootstrap (make sure it is a external source call?)
+* Use PurifyCSS to include Bootstrap (make sure it is a external source call?).
+* Try to put the SVGs (and other assets) into the HTML template dynamically.
+* WebWorkers/Offline Plugin/Webpack.
 
 ## Sources
 

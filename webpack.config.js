@@ -70,6 +70,12 @@ module.exports = env => { // You may use an Object ( take out: "() => { return" 
                                 outputPath: 'assets/media/images/', // Image Destination for App/Dist Dir.
                                 limit: 10000 // This is only set when using URL Loader. (How big the file is/Greater files will come in as regular URLs).
                             }
+                        },
+                        {
+                            loader: 'img-loader',
+                            options: {
+                                enabled: env.prod ? true : false
+                            }
                         }
                     ]
                 },
