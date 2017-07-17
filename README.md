@@ -6,7 +6,7 @@ Webpack Launchpad is a small, easy-to-use and well-documented Webpack boilerplat
 Almost every line in Webpack Launchpad will be commented so that you can learn what each line is doing. You may play around with the code however you like, or use it as is to kick start (or, uh, provide a launchpad for) your own project.
 
 ## Status
-Webpack Launchpad is almost ready for consumption! I am currently testing some of the features, plugins and loaders we have added in the last commits. I'm also reviewing and cleaning all documentation. Aside from a lot of housekeeping though, feel free to use it!
+Webpack Launchpad is almost ready for consumption! I am currently testing some of its features, plugins and loaders as well as reviewing and cleaning all documentation. Aside from that, feel free to use it! As I find cool things (standards/best practices/new features), I will update this ongoing project!
 
 ## What Webpack Launchpad Includes:
 
@@ -68,7 +68,6 @@ PRs are welcome depending on what we are adding! Here are a few helpful points:
 
 ### Add to Launchpad
 
-* Make sure we are not shipping anything to customers that we do not want.
 * Use PurifyCSS to include Bootstrap (make sure it is a external source call?).
 * Try to put the SVGs (and other assets) into the HTML template dynamically (possibly doable with HTML Webpack plugin).
 * [WebWorkers/Offline Plugin/Webpack](https://github.com/NekR/offline-plugin).
@@ -78,6 +77,12 @@ PRs are welcome depending on what we are adding! Here are a few helpful points:
 * Add Testing with Webpack.
 * Check for typos in the config and all other files.
 * Split examples.
+* [Javascript HTML Template example?](https://github.com/jantimon/html-webpack-plugin/tree/master/examples/javascript-advanced)
+* Make sure we are not shipping anything to customers that we do not want.
+* Fix Click Me module Example.
+* Add Image to Base64 Example.
+* Add CSSNext.
+* Remove File Loader (since we already have URL Loader)?
 
 ## Sources
 
