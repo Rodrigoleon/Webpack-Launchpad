@@ -1,12 +1,11 @@
 body{
-	background-color: teal;
+	background: linear-gradient(45deg, rgba(10,18,22,1) 0%,rgba(69,72,77,1) 100%);
+	/* PostCSS Tests */
+	/* Autoprefixer Test */
+	user-select: none;
 }
 
-/* Testing PostCSS and Autoprefixer */
-:fullscreen a {
-    display: flex;
-}
-
+/* PurifyCSS Test */
 .test-class{
-	background: rose;
+	background: red;
 }
