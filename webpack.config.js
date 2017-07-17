@@ -61,7 +61,7 @@ module.exports = env => { // You may use an Object ( take out: "() => { return" 
                     use : ['html-loader']
                 },
                 { // CSS Compiler (uses sass and css-loader)
-                    test: /\.(png|jpg|gif)$/, // Note that if you are not using the SVG Sprite Loader, you can add SVG here as well.
+                    test: /\.(jpe?g|png|gif)$/, // Note that if you are not using the SVG Sprite Loader, you can add SVG here as well.
                     use : [
                         {
                             loader: 'url-loader', // Optionally, you can use File-Loader (It is already included in LP.)
@@ -71,12 +71,12 @@ module.exports = env => { // You may use an Object ( take out: "() => { return" 
                                 limit: 10000 // This is only set when using URL Loader. (How big the file is/Greater files will come in as regular URLs).
                             }
                         },
-                        {
+                        { // If Imagemin is not working with jpgs, please check the docs.
                             loader: 'img-loader',
                             options: {
                                 enabled: env.prod ? true : false
                             }
-                        }
+                        },
                     ]
                 },
                 {
