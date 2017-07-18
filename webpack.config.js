@@ -64,7 +64,7 @@ module.exports = env => { // You may use an Object ( take out: "() => { return" 
                     test: /\.(jpe?g|png|gif)$/, // Note that if you are not using the SVG Sprite Loader, you can add SVG here as well.
                     use : [
                         {
-                            loader: 'url-loader', // Optionally, you can use File-Loader (It is already included in LP.)
+                            loader: 'url-loader', // Optionally, you can use File-Loader (It is already included in Launchpad and url-loader uses file loader to move files if no url is needed. [you need both]).
                             options: {
                                 name: '[name].[ext]',
                                 outputPath: 'assets/media/images/', // Image Destination for App/Dist Dir.
@@ -86,7 +86,8 @@ module.exports = env => { // You may use an Object ( take out: "() => { return" 
                             loader: 'file-loader',
                             options: {
                                 name: '[name].[ext]',
-                                outputPath: 'assets/media/fonts/' // Image Destination for App/Dist Dir.
+                                outputPath: 'assets/media/fonts/', // Image Destination for App/Dist Dir.
+                                publicPath: '../../' // Because of our unique(?) file structure, we must set this so that our CSS takes the correct path.
                             }
                         }
                     ]

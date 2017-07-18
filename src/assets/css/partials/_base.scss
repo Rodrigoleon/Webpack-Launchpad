@@ -1,5 +1,13 @@
+@font-face {
+    font-family: Roboto;
+    /* Asset Loading Test */
+    src: url(../media/fonts/roboto.ttf);
+}
+
 body{
 	background: linear-gradient(45deg, rgba(10,18,22,1) 0%,rgba(69,72,77,1) 100%);
+	/* Asset Loading Test */
+	font-family: Roboto;
 	/* PostCSS Tests */
 	/* Autoprefixer Test */
 	user-select: none;
