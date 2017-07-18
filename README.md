@@ -64,25 +64,35 @@ PRs are welcome depending on what we are adding! Here are a few helpful points:
 * Start docs explaining how to run code.
 * Create a folder structure example.
 * Logo maybe?
+* Add testing Launchpad project.
 * Test this in an actual project once all the points are done!
 
 ### Add to Launchpad
 
 * Use PurifyCSS to include Bootstrap (make sure it is a external source call?).
-* Try to put the SVGs (and other assets) into the HTML template dynamically (possibly doable with HTML Webpack plugin).
 * [WebWorkers/Offline Plugin/Webpack](https://github.com/NekR/offline-plugin).
 * Test Externals.
 * Test Long Term Caching (Different chunks from files included/not included).
-* Test Fonts and Asset Loading.
-* Add Testing with Webpack.
 * Check for typos in the config and all other files.
-* Split examples.
-* [Javascript HTML Template example?](https://github.com/jantimon/html-webpack-plugin/tree/master/examples/javascript-advanced)
 * Make sure we are not shipping anything to customers that we do not want.
 * Fix Click Me module Example.
-* Add Image to Base64 Example.
-* Add CSSNext.
-* Remove File Loader (since we already have URL Loader)?
+* Issues with Purify and JS. Check and note.
+
+### Launchpad G
+
+* [Javascript HTML Template example as an alternative](https://github.com/jantimon/html-webpack-plugin/tree/master/examples/javascript-advanced)
+* Add testing Launchpad features.
+* Add testing LG project.
+
+## libpng issues
+
+Installing on some versions of OSX may raise errors with a [missing libpng dependency](https://github.com/tcoopman/image-webpack-loader/issues/51#issuecomment-273597313):
+
+		Module build failed: Error: dyld: Library not loaded: /usr/local/opt/libpng/lib/libpng16.16.dylib
+
+This can be remedied by installing the newest version of libpng with [homebrew](http://brew.sh/):
+
+		brew install libpng
 
 ## Sources
 
