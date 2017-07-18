@@ -1,3 +1,15 @@
+/* CSSNext (includes Autoprefixer) Test */
+:root { 
+  --red: #d33;
+}
+
+h1 { 
+  &:hover {
+    color: color(var(--red) a(54%));
+  }
+}
+/* // CSSNext (includes Autoprefixer) Test */
+
 @font-face {
     font-family: Roboto;
     /* Asset Loading Test */

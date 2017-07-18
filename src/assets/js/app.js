@@ -5,7 +5,7 @@ require('../css/style.scss'); //must be the source file not the rendered CSS.
 // Testing Defaults
 console.log('If this shows, the app is working as intended.');
 var app = document.getElementById('app');
-app.innerHTML = '<h1>Hello World!</h1>';
+app.innerHTML = '<p>This is Webpack Launchpad!</p>';
 
 // ES2015 Sample Import (Also checks that Babel Loader is working correctly.)
 // Please note that this current example does not work due to the examples below. Will fix.
