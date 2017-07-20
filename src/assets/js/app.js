@@ -7,6 +7,9 @@ console.log('If this shows, the app is working as intended.');
 var app = document.getElementById('app');
 app.innerHTML = '<p>This is Webpack Launchpad!</p>';
 
+import $ from 'jquery';
+$('#app').css('border-top', '1px solid #111');
+
 // ES2015 Sample Import (Also checks that Babel Loader is working correctly.)
 // Please note that this current example does not work due to the examples below. Will fix.
 import testButton from './modules/module-x';
