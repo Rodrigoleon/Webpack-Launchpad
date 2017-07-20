@@ -69,22 +69,25 @@ PRs are welcome depending on what we are adding! Here are a few helpful points:
 
 ### Add to Launchpad
 
-* Use PurifyCSS to include Bootstrap (make sure it is a external source call?).
 * [WebWorkers/Offline Plugin/Webpack](https://github.com/NekR/offline-plugin).
-* Test Externals.
 * Test Long Term Caching (Different chunks from files included/not included).
 * Check for typos in the config and all other files.
-* Make sure we are not shipping anything to customers that we do not want.
 * Fix Click Me module Example.
-* Issues with Purify and JS. Check and note.
+* Make sure we are not shipping anything to customers that we do not want.
 
-### Launchpad G
+### LG Project
 
 * [Javascript HTML Template example as an alternative](https://github.com/jantimon/html-webpack-plugin/tree/master/examples/javascript-advanced)
 * Add testing Launchpad features.
 * Add testing LG project.
 
-## libpng issues
+### Wish List
+
+* [Tree Shaking CSS](https://github.com/webpack-contrib/css-loader/issues/506)
+
+## Known Issues
+
+### libpng issues
 
 Installing on some versions of OSX may raise errors with a [missing libpng dependency](https://github.com/tcoopman/image-webpack-loader/issues/51#issuecomment-273597313):
 
@@ -93,6 +96,13 @@ Installing on some versions of OSX may raise errors with a [missing libpng depen
 This can be remedied by installing the newest version of libpng with [homebrew](http://brew.sh/):
 
 		brew install libpng
+
+### PurifyCSS
+
+PurifyCSS purifies all CSS that is not being used in HTML files. This, essentially, does not include JavaScript files that may include CSS Modules, JSX, etc. The PurifyCSS team has a [work around](https://github.com/webpack-contrib/purifycss-webpack/issues/97) but the [issue](https://github.com/webpack-contrib/purifycss-webpack/issues/104) is [still](https://github.com/webpack-contrib/purifycss-webpack/issues/116) present.
+
+As this project assumes you will be using most of your CSS in classes and IDs you set in JavaScript, I will comment out PurifyCSS for the time being.
+
 
 ## Sources
 

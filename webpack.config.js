@@ -23,10 +23,10 @@ module.exports = env => { // You may use an Object ( take out: "() => { return" 
     // Pushing Plugins that are used regardless dev vs prod.
     plugins.push(
         new ExtractTextPlugin( env.prod ? "assets/css/styles.[contenthash:10].min.css" : "assets/css/styles.css" ), // Name and Destination. Note that [contenthash:10] is only available on ExtractTextPlugin
-        new PurifyCSSPlugin({ // Make sure this is after ExtractTextPlugin!
+        //new PurifyCSSPlugin({ // Make sure this is after ExtractTextPlugin!
             // Give paths to parse for rules. These should be absolute!
-            paths: glob.sync(path.join(__dirname, 'src/*.html')),
-        }),
+            //paths: glob.sync(path.join(__dirname, 'src/*.html')),
+        //}),
         new HtmlWebpackPlugin({
             template: 'src/index.html', // Where to look for the Source Index.html
             filename: 'index.html' // Where to place the new index.html file for the App/Dist dir.
