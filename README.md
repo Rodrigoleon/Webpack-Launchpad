@@ -33,7 +33,7 @@ Webpack Launchpad is almost ready for consumption! I am currently testing some o
 ### Webpack Loaders
 
 * [SASS/SCSS](https://github.com/webpack-contrib/sass-loader)
-* [PostCSS (with Autoprefixer)](https://github.com/postcss/postcss-loader)
+* [PostCSS](https://github.com/postcss/postcss-loader)
 * [File](https://webpack.js.org/loaders/file-loader/)
 * [URL](https://github.com/webpack-contrib/url-loader)
 * [CSS](https://webpack.js.org/loaders/css-loader/)
@@ -92,7 +92,7 @@ PRs are welcome depending on what we are adding! Here are a few helpful points:
 
 ### libpng issues
 
-Installing on some versions of OSX may raise errors with a [missing libpng dependency](https://github.com/tcoopman/image-webpack-loader/issues/51#issuecomment-273597313):
+Installing img-loader on some versions of OSX may raise errors with a [missing libpng dependency](https://github.com/tcoopman/image-webpack-loader/issues/51#issuecomment-273597313):
 
 		Module build failed: Error: dyld: Library not loaded: /usr/local/opt/libpng/lib/libpng16.16.dylib
 
