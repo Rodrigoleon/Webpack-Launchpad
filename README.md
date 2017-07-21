@@ -41,6 +41,7 @@ Webpack Launchpad is almost ready for consumption! I am currently testing some o
 * [Style](https://webpack.js.org/loaders/style-loader/)
 * [SVG Sprite](https://github.com/kisenka/svg-sprite-loader)
 * [Img](https://github.com/thetalecrafter/img-loader)
+* [JSLint](https://webpack.js.org/loaders/jshint-loader/)
 
 ## Rules
 
@@ -102,6 +103,10 @@ This can be remedied by installing the newest version of libpng with [homebrew](
 PurifyCSS purifies all CSS that is not being used in HTML files. This, essentially, does not include JavaScript files that may include CSS Modules, JSX, etc. The PurifyCSS team has a [work around](https://github.com/webpack-contrib/purifycss-webpack/issues/97) but the [issue](https://github.com/webpack-contrib/purifycss-webpack/issues/104) is [still](https://github.com/webpack-contrib/purifycss-webpack/issues/116) present.
 
 As this project assumes you will be using most of your CSS in classes and IDs you set in JavaScript, I will comment out PurifyCSS for the time being.
+
+### JSHint
+
+Current ReadMe for [JSHint](https://github.com/webpack-contrib/jshint-loader#usage) shows outdated configuration.
 
 
 ## Sources

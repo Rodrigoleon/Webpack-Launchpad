@@ -110,6 +110,30 @@ module.exports = env => { // You may use an Object ( take out: "() => { return" 
                             options: { extract: true, spriteFilename: 'assets/media/vectors/svg-sprite-[hash:12].svg' },
                         }
                     ]
+                },
+                {
+                    test: /\.js$/, // include .js files
+                    enforce: "pre", // preload the jshint loader
+                    exclude: /node_modules/, // exclude any and all files in the node_modules folder
+                    use: [
+                        {
+                            loader: "jshint-loader",
+                            options: {
+                                // any jshint option http://www.jshint.com/docs/options/
+                                // i. e.
+                                camelcase: true,
+                                // jshint errors are displayed by default as warnings
+                                // set emitErrors to true to display them as errors
+                                emitErrors: false,
+                                // jshint to not interrupt the compilation
+                                // if you want any file with jshint errors to fail
+                                // set failOnHint to true
+                                failOnHint: false,
+                                // Lets JSHint know we are using ES6.
+                                esversion: 6
+                            }
+                        }
+                    ]
                 }
             ]
         }, // Modules End
