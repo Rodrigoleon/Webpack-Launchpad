@@ -75,12 +75,14 @@ PRs are welcome depending on what we are adding! Here are a few helpful points:
 * Check for typos in the config and all other files.
 * Fix Click Me module Example.
 * Make sure we are not shipping anything to customers that we do not want.
+* Check for Deprecated notices issue not from [Extract Text Plugin](https://github.com/webpack-contrib/extract-text-webpack-plugin/issues/529) (may be dependency of a dependency).
 
 ### LG Project
 
 * [Javascript HTML Template example as an alternative](https://github.com/jantimon/html-webpack-plugin/tree/master/examples/javascript-advanced)
 * Add testing Launchpad features.
 * Add testing LG project.
+* Add [CommonChunk Plugin](https://www.youtube.com/watch?v=KAALn4Ys8Mg&index=8&list=PLpPnRKq7eNW2_dy8Re4lyByThMtTAhw5Q) as option to [Webpack](https://webpack.js.org/plugins/commons-chunk-plugin/).
 
 ### Wish List
 
