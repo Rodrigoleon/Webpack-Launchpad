@@ -11,9 +11,9 @@ const testButton = {
 	attachEl: () => {
 		document.getElementById('testButton').addEventListener('click',
 			() => {
-				console.log('Clicked')
+				console.log('Clicked');
 			}
-		)
+		);
 	}
 };
 export default testButton;
