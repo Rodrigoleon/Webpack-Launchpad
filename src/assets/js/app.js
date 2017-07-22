@@ -37,16 +37,22 @@ var reactLogo = '<img src="' + img + '" alt="Reactive" width="460">';
 newNode("figure", 'class', 'logo', reactLogo, app );
 
 // SVG Sprites
-import codeIcon from '../media/vectors/code.svg';
-console.log(codeIcon);
+import codeIcon from '../media/vectors/code.svg'; // Importing first SVG asset
+import settingsIcon from '../media/vectors/settings.svg'; // Importing second SVG asset
+
+console.log(codeIcon); // Console logging asset to test its output.
+
 window.addEventListener('DOMContentLoaded', () => {
-	// Renders <img> tag. This works on Local dev.
+	// Holds <img> tag for first icon. <img> works on Local dev evn.
 	const image = `<img width="${codeIcon.width}" height="${codeIcon.height}" src="${codeIcon.url}">`;
-	// Renders SVG inline code (shadow dom).
-	// Please note that the example below does not work/spits out errors when developing locally: (https://stackoverflow.com/questions/29493965/unsafe-attempt-to-load-url-svg).
+	// Holds second <img> tag for second icon.
+	const imageTwo = `<img width="${settingsIcon.width}" height="${settingsIcon.height}" src="${settingsIcon.url}">`;
+	// Holds SVG inline code (shadow dom).
+	// Please note that the example below ("usage") does not work/spits out errors when developing locally: (https://stackoverflow.com/questions/29493965/unsafe-attempt-to-load-url-svg).
 	const usage = `<svg viewBox="${codeIcon.viewBox}"><use xlink:href="${codeIcon.url}"></use></svg>`;
 	var svgOutput = `${image} ${usage}`;
-	newNode("div", 'class', 'svg', svgOutput, app );
+	newNode("div", 'class', 'svg', `${imageTwo}`, app );// Image Two
+	newNode("div", 'class', 'svg', svgOutput, app ); // Image One
 });
 // End of SVG Sprites.
 

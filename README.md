@@ -6,7 +6,7 @@ Webpack Launchpad is a small, easy-to-use and well-documented Webpack boilerplat
 Almost every line in Webpack Launchpad will be commented so that you can learn what each line is doing. You may play around with the code however you like, or use it as is to kick start (or, uh, provide a launchpad for) your own project.
 
 ## Status
-Webpack Launchpad is almost ready for consumption! I am currently testing some of its features, plugins and loaders as well as reviewing and cleaning all documentation. Aside from that, feel free to use it! As I find cool things (standards/best practices/new features), I will update this ongoing project!
+Webpack Launchpad is ready for you to download! I am currently improving documentation, but aside from that, feel free to use it! As I find cool things (standards/best practices/new features), I will introduce them to Webpack Launchpad as this is an ongoing project!
 
 ## What Webpack Launchpad Includes:
 
@@ -45,7 +45,7 @@ Webpack Launchpad is almost ready for consumption! I am currently testing some o
 
 ## Rules
 
-PRs are welcome depending on what we are adding! Here are a few helpful points:
+PRs are welcome depending on what you are adding! Here are a few helpful points:
 
 * Please don't use ES6/ES2015 at this time unless necessary. There are a few bits on this project that uses ES6/ES2015 (since Webpack 2 and up supports it), but for the most part, keep it newbie friendly.
 * Use 4 space tab :P -- no, lets not add a file to handle that.
@@ -71,10 +71,8 @@ PRs are welcome depending on what we are adding! Here are a few helpful points:
 ### Add to Launchpad
 
 * [WebWorkers/Offline Plugin/Webpack](https://github.com/NekR/offline-plugin).
-* Check for typos in the config and all other files. (output path wpconfig)
 * Make sure we are not shipping anything to customers that we do not want.
 * Check for Deprecated notices (issue not from [Extract Text Plugin](https://github.com/webpack-contrib/extract-text-webpack-plugin/issues/529), may be from a dependency of a dependency).
-* Add second SVG to test out that the spriting works correctly.
 
 ### LG Project
 
