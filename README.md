@@ -73,8 +73,9 @@ PRs are welcome depending on what we are adding! Here are a few helpful points:
 * [WebWorkers/Offline Plugin/Webpack](https://github.com/NekR/offline-plugin).
 * Test Long Term Caching (Different chunks from files included/not included).
 * Check for typos in the config and all other files.
-* Fix Click Me module Example.
+* Cleanup App.js
 * Make sure we are not shipping anything to customers that we do not want.
+* Test JSHint and Build process after updates.
 * Check for Deprecated notices issue not from [Extract Text Plugin](https://github.com/webpack-contrib/extract-text-webpack-plugin/issues/529) (may be dependency of a dependency).
 
 ### LG Project
