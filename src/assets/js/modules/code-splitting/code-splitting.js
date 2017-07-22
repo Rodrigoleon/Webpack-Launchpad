@@ -1,4 +1,4 @@
-// Code Splitting and Code on Demand
+// Code Splitting/Code on Demand
 // Place this code on App.JS for it to run.
 // Note that you will need to change the path of the Sample Pages. Alternatively, make this an export.
 app.innerHTML = `

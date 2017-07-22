@@ -71,9 +71,10 @@ PRs are welcome depending on what we are adding! Here are a few helpful points:
 ### Add to Launchpad
 
 * [WebWorkers/Offline Plugin/Webpack](https://github.com/NekR/offline-plugin).
-* Check for typos in the config and all other files.
+* Check for typos in the config and all other files. (output path wpconfig)
 * Make sure we are not shipping anything to customers that we do not want.
 * Check for Deprecated notices (issue not from [Extract Text Plugin](https://github.com/webpack-contrib/extract-text-webpack-plugin/issues/529), may be from a dependency of a dependency).
+* Add second SVG to test out that the spriting works correctly.
 
 ### LG Project
 

@@ -1,15 +1,15 @@
-var path = require('path'); // Webp Config needs this line to make sure the filepath is absolute. It is needed mostly for webpack-dev-server usage. (https://github.com/webpack-contrib/awesome-webpack#table-of-contents)
+var path = require('path'); // Webpack Config needs this line to make sure the filepath is absolute. It is needed mostly for webpack-dev-server usage. (https://github.com/webpack-contrib/awesome-webpack#table-of-contents)
 var webpack = require('webpack'); // Needed for Plugins that use Webpack
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
-var glob = require('glob'); // Goes with Purify
+var glob = require('glob'); // Goes with Purify (and does not require an npm install)
 var PurifyCSSPlugin = require('purifycss-webpack');
-var SpriteLoaderPlugin = require('svg-sprite-loader/plugin'); // You must use this with the Sprite Loader if you want it to extract to a new location.
+var SpriteLoaderPlugin = require('svg-sprite-loader/plugin'); // You must use this with Sprite Loader if you want it to extract to a new location.
 
-module.exports = env => { // You may use an Object ( take out: "() => { return" ) or an ES6/ES2015 function so that we can pass the env parameter.
+module.exports = env => { // You may use an Object ( take out: "env => { return" ) or an ES6/ES2015 function so that we can pass the env parameter.
     
-    // Create Plugins variable to hold production vs development.
+    // Create Plugins variable to hold production vs development plugins.
     var plugins = env.prod
         ?   [ // When in Production
                 //new webpack.optimize.UglifyJsPlugin({
@@ -20,9 +20,9 @@ module.exports = env => { // You may use an Object ( take out: "() => { return" 
                 new webpack.HotModuleReplacementPlugin() // Activating HMR
             ];
             
-    // Pushing Plugins that are used regardless dev vs prod.
+    // Pushing Plugins that are used in both dev and prod.
     plugins.push(
-        new ExtractTextPlugin( env.prod ? "assets/css/styles.[contenthash:10].min.css" : "assets/css/styles.css" ), // Name and Destination. Note that [contenthash:10] is only available on ExtractTextPlugin
+        new ExtractTextPlugin( env.prod ? "assets/css/styles.[contenthash:10].min.css" : "assets/css/styles.css" ), // Name and Destination. Note that "[contenthash:10]" is only available on ExtractTextPlugin
         //new PurifyCSSPlugin({ // Make sure this is after ExtractTextPlugin!
             // Give paths to parse for rules. These should be absolute!
             //paths: glob.sync(path.join(__dirname, 'src/*.html')),
@@ -32,24 +32,25 @@ module.exports = env => { // You may use an Object ( take out: "() => { return" 
             filename: 'index.html' // Where to place the new index.html file for the App/Dist dir.
         }),
         new CleanWebpackPlugin(['app']), // Removes Dist/App folder before compiling happens.
-        new SpriteLoaderPlugin() // You must use this with the Sprite Loader if you want it to extract to a new location.
+        new SpriteLoaderPlugin() // You must use this with Sprite Loader if you want it to extract to a new location.
     );
 
     return {
-        devtool: env.prod ? 'source-map' : 'eval', // We can use inline-source-map to have CSS Sourcemaps on Dev mode. 
-        plugins: plugins, // Please note that there are alternative options. (Sec 8.)
-        entry: './src/assets/js/app.js', // My main JS file with all my requires/imports. (Resets a default. Needed for this file.)
+        devtool: env.prod ? 'source-map' : 'eval', // Alternatively, we can use inline-source-map instead of eval to have CSS Sourcemaps on Dev mode.
+        plugins: plugins, // Please note that there are alternative options on how to pass plugins that are prod vs dev.
+        entry: './src/assets/js/app.js', // Your main JS file with all your requires/imports. (Resets a default. Needed for this file to work.)
         output: {
-            path: path.resolve(__dirname, 'app'), // My output file path. (Resets a default. Needed for this file.) Could also just be path: __dirname+'/app/js' if not using webpack-dev-server. ** Make this the dist/app folder so that all your compiled stuff goes here. This way you can let index.html be index.html and style.css be assets/css/style.css.
-            filename: env.prod ? 'assets/js/app.[chunkhash].min.js' : 'assets/js/app.js' // What the name of my output file is. (Resets a default. Needed for this file.)
+            path: path.resolve(__dirname, 'app'), // Your output file path. (Resets a default. Needed for this file to work.) 
+            // Make this the dist/app directory so that all your compiled stuff goes here. This way you can let index.html template compile to index.html and style.css compile to assets/css/style.css. (Needed for our current directory structure.)
+            filename: env.prod ? 'assets/js/app.[chunkhash].min.js' : 'assets/js/app.js' // What the name of your output file is. (Resets a default. Needed for this file to work.)
             //publicPath: '/app/' // This is used if Webpack-dev-server fails but its failing to live reload anyway.
         },
         module: { // Adding Loaders.
             rules: [
-                { // CSS Compiler (uses SASS-Loader and CSS-Loader and PostCSS-Loader)
+                { // CSS compilers with source maps. They must be in order (last executes first).
                     test: /\.scss$/,
                     use: ExtractTextPlugin.extract({
-                        use: [ //['css-loader', 'postcss-loader', 'sass-loader']
+                        use: [
                             { loader: 'css-loader', options: { sourceMap: true } },
                             { loader: 'postcss-loader', options: { sourceMap: true } },
                             { loader: 'sass-loader', options: { sourceMap: true } }
@@ -60,7 +61,7 @@ module.exports = env => { // You may use an Object ( take out: "() => { return" 
                     test: /\.html$/,
                     use : ['html-loader']
                 },
-                { // CSS Compiler (uses sass and css-loader)
+                { // URL Loader to load assets (images)
                     test: /\.(jpe?g|png|gif)$/, // Note that if you are not using the SVG Sprite Loader, you can add SVG here as well.
                     use : [
                         {
@@ -113,7 +114,7 @@ module.exports = env => { // You may use an Object ( take out: "() => { return" 
                 },
                 {
                     test: /\.js$/, // include .js files
-                    enforce: "pre", // preload the jshint loader
+                    enforce: "pre", // preload jshint loader (must be used as a preloader aka before all other loaders.)
                     exclude: /node_modules/, // exclude any and all files in the node_modules folder
                     use: [
                         {
@@ -138,7 +139,7 @@ module.exports = env => { // You may use an Object ( take out: "() => { return" 
             ]
         }, // Modules End
         externals: {
-            'jquery' : 'jQuery' // jQuery (if included [which at the moment we are not]) is imported externally, not from this bundle file. You will need to add Loadash, React, Angular, etc to this if you want to do the same with those. -- To import jQuery into your app.js (or other modules), use "import $ from 'jquery';" and make sure to add your CDN dependency to your HTML file. (Please add this to the docs!) (https://webpack.js.org/guides/author-libraries/)
+            'jquery' : 'jQuery' // jQuery is imported externally (from CDN). You will need to add Loadash, React, Angular, etc to this if you want to do the same with those. -- To import jQuery into your app.js (or other frameworks/libs), use "import $ from 'jquery';" and make sure to add your CDN dependency to your HTML file. (https://webpack.js.org/guides/author-libraries/)
         },
         devServer: {
             hot: env.prod ? false : true, // Tell the dev-server we're using HMR
