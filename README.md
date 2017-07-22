@@ -81,13 +81,13 @@ PRs are welcome depending on what we are adding! Here are a few helpful points:
 ### LG Project
 
 * [Javascript HTML Template example as an alternative](https://github.com/jantimon/html-webpack-plugin/tree/master/examples/javascript-advanced)
-* Add testing Launchpad features.
-* Add testing LG project.
+* Add testing as a LG project feature.
+* Add testing to the LG project.
 * Add [CommonChunk Plugin](https://www.youtube.com/watch?v=KAALn4Ys8Mg&index=8&list=PLpPnRKq7eNW2_dy8Re4lyByThMtTAhw5Q) as option to [Webpack](https://webpack.js.org/plugins/commons-chunk-plugin/).
 
 ### Wish List
 
-* [Tree Shaking CSS](https://github.com/webpack-contrib/css-loader/issues/506)
+* [Tree Shaking for CSS](https://github.com/webpack-contrib/css-loader/issues/506)
 
 ## Known Issues
 
