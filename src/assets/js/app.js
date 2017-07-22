@@ -1,6 +1,6 @@
 // CommonJS Imports/Requires
-require('./modules/module-x.js'); //requires module-x JS entire file.
-require('../css/style.scss'); //must be the source file not the rendered CSS.
+require('./modules/module-x'); //requires module-x JS entire file.
+require('../css/style.scss'); //must be the source file not the rendered CSS (aka SCSS).
 
 // Setting defaults for testing purposes
 console.log('If this shows, the app is working as intended.');
@@ -16,29 +16,28 @@ function newNode(elm, att, attName, content, appendTo) {
 	appendTo.appendChild(fragment);
 }
 
+// Sample paragraph to target with CSS Font.
 app.innerHTML = '<p>This is Webpack Launchpad!</p>';
 
-// Importing jQuery as an external source sample
+// Importing jQuery as an Externals sample
 import $ from 'jquery';
-$('#app').css('border-top', '1px solid #111');
+$('#app').css('border-top', '1px solid #00daff');
 
 // ES2015 Sample Import (Also checks that Babel Loader is working correctly.)
-// Please note that this current example does not work due to the examples below. Will fix.
 import testButton from './modules/module-x';
 var newMessage = () => (testButton.button);
-newNode("div", 'class', 'button', newMessage(), app ); //function replaces += innerHTML.
+newNode("div", 'class', 'button', newMessage(), app );
 testButton.attachEl();
 // End of ES2015 Sample Import
 
 // Importing a sample image (with ES2015).
 import img from '../media/images/react-logo.png';
-// Adding the sample image (with ES5).
+// Adding the sample image (with ES5) to the dom.
 var reactLogo = '<img src="' + img + '" alt="Reactive" width="460">';
 newNode("figure", 'class', 'logo', reactLogo, app );
 
 // SVG Sprites
 import codeIcon from '../media/vectors/code.svg';
-// => {id string, width: string, height: string, viewBox: string, url: string}
 console.log(codeIcon);
 window.addEventListener('DOMContentLoaded', () => {
 	// Renders <img> tag. This works on Local dev.
@@ -51,15 +50,6 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 // End of SVG Sprites.
 
-/* Creating an Element Test
-var fragment = document.createDocumentFragment();
-var messageBtn = document.createElement('button');
-messageBtn.innerText = 'Click Me!';
-messageBtn.setAttribute("id", "testButton");
-fragment.appendChild(messageBtn);
-app.appendChild(fragment); 
-*/
-
 // HMR
 // In order for Hot Module Replacement (HMR) to happen in this file, you must include this line.
 if (module.hot){
@@ -69,7 +59,7 @@ if (module.hot){
 
 
 /* 
-You can also use:
+You can also require other parts of your code this way:
 var $ = require('jquery');
 import something from 'path/to/module';
 import myVarOrLet from 'path/to/module';
