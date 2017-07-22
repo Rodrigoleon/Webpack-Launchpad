@@ -5,10 +5,44 @@ Webpack Launchpad is a small, easy-to-use and well-documented Webpack boilerplat
 
 Almost every line in Webpack Launchpad will be commented so that you can learn what each line is doing. You may play around with the code however you like, or use it as is to kick start (or, uh, provide a launchpad for) your own project.
 
-## Status
+## Table of Contents
+
+* [Status](#status)
+* [Installation](#installation)
+* [File Structure](#file-structure)
+* [Launchpad Feature Set](#what-launchpad-includes)
+	* [Webpack Features](#webpack-features)
+	* [Webpack Plugins](#webpack-plugins)
+	* [Webpack Loaders](#webpack-loaders)
+* [Rules](#rules)
+* [To Do](#to-do)
+* [Known Issues](#known-issues)
+* [Sources](#sources)
+
+## Launchpad Details
+
+### Status
 Webpack Launchpad is ready for you to download! I am currently improving documentation, but aside from that, feel free to use it! As I find cool things (standards/best practices/new features), I will introduce them to Webpack Launchpad as this is an ongoing project!
 
-## What Webpack Launchpad Includes:
+### Installation
+Download or clone and `npm install`, thats it!
+
+### File Structure
+The current file structure when the production of this boilerplate is built can be found below. This is configuration A (B may be coming in the future).
+
+		App
+		index.html
+		- assets
+		 - css
+		  style.css
+		 - js
+		  app.js
+		 - media
+		  - fonts
+		  - images
+		  - vectors
+
+## What Launchpad Includes:
 
 ### Webpack Features
 
@@ -62,8 +96,6 @@ PRs are welcome depending on what you are adding! Here are a few helpful points:
 
 * Add all to-do items to Github.
 * Start docs explaining code.
-* Start docs explaining how to run code.
-* Create a folder structure example.
 * Logo maybe?
 * Add testing Launchpad project.
 * Test this in an actual project once all the points are done!
