@@ -7,6 +7,8 @@ var glob = require('glob'); // Goes with Purify (and does not require an npm ins
 var PurifyCSSPlugin = require('purifycss-webpack');
 var SpriteLoaderPlugin = require('svg-sprite-loader/plugin'); // You must use this with Sprite Loader if you want it to extract to a new location.
 
+// For most usecases you can use Parcel.
+
 module.exports = env => { // You may use an Object ( take out: "env => { return" ) or an ES6/ES2015 function so that we can pass the env parameter.
     
     // Create Plugins variable to hold production vs development plugins.
