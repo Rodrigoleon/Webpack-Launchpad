@@ -27,7 +27,7 @@
     "img-loader": "^2.0.0",
     "jshint": "^2.9.7",
     "jshint-loader": "^0.8.4",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "postcss-loader": "^2.0.6",
     "purifycss-webpack": "^0.7.0",
     "sass-loader": "^6.0.6",
